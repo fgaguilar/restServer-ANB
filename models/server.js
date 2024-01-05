@@ -10,6 +10,7 @@ class Server {
         this.port = process.env.PORT;
         this.usuariosPath = '/api/usuarios';
         this.declaracionDeImportacionsPath = '/api/declaracionDeImportacions';
+        this.declaracionDeImportacionDetallesPath = '/api/declaracionDeImportacionDetalles';
 
         // Conectar a base de datos
         this.conectarDB();
@@ -41,6 +42,7 @@ class Server {
     routes() {
         //this.app.use( this.usuariosPath, require('../routes/usuarios')),
         this.app.use( this.declaracionDeImportacionsPath, require('../routes/declaracionDeImportacions'));
+        this.app.use( this.declaracionDeImportacionDetallesPath, require('../routes/declaracionDeImportacionDetalles'));
     }
 
     listen() {
